@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <example.networkme.views.SquareImageView
+            android:id="@+id/grid_picture"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+
+        <example.networkme.views.SquareLinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ProgressBar
+                android:id="@+id/grid_pic_progress"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" 
+                android:layout_gravity="center"/>
+            
+        </example.networkme.views.SquareLinearLayout>
+    </FrameLayout>
+
+    <example.networkme.views.SquareImageView
+        android:id="@+id/grid_icon"
+        android:layout_width="25dip"
+        android:layout_height="25dip"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center"
+        android:adjustViewBounds="true" />
+
+    <TextView
+        android:id="@+id/grid_text"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center"
+        android:layout_toRightOf="@id/grid_icon"
+        android:ellipsize="marquee"
+        android:paddingBottom="3dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="3dp"
+        android:singleLine="true"
+        android:text="text"
+        android:textColor="@android:color/white" />
+
+</RelativeLayout>

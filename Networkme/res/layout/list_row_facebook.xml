@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:padding="6dip" >
+    <!--  -->
+    
+    <ImageView
+        android:id="@+id/fb_icon"
+        android:layout_width="35dip"
+        android:layout_height="fill_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="6dip"
+        android:layout_centerVertical="true"
+        android:src="@drawable/fb_blue_50" />
+
+    <TextView
+        android:id="@+id/fb_event_name"
+        android:layout_width="fill_parent"
+        android:layout_height="26dip"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@id/fb_icon"
+        android:ellipsize="marquee"
+        android:singleLine="true"
+        android:text="Facebook Event Name"
+        android:textSize="16sp" />
+        
+    <TextView
+        android:id="@+id/fb_time"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignWithParentIfMissing="true"
+        android:layout_toRightOf="@id/fb_icon"
+        android:layout_below="@id/fb_event_name"
+        android:text="Facebook Times"
+        android:layout_weight="1"
+        android:textSize="12sp" />
+    
+    
+    <TextView
+        android:id="@+id/fb_event_location"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fb_time"
+        android:layout_alignParentRight="true"
+        android:layout_alignWithParentIfMissing="true"
+        android:layout_toRightOf="@id/fb_icon"
+        android:gravity="center_vertical"
+        android:text="Facebook location"
+        android:textSize="12sp" />
+    <View 
+        android:background="#d3d3d3" 
+        android:layout_width ="fill_parent" 
+        android:layout_height="1dip" 
+        android:layout_toRightOf="@id/fb_icon"
+        android:layout_above="@id/fb_event_location"/>
+    
+    <TextView
+        android:id="@+id/fb_event_info"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fb_event_location"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignWithParentIfMissing="true"
+        android:layout_toRightOf="@id/fb_icon"
+        android:gravity="center_vertical"
+        android:text="Facebook Info"
+        android:lines="4"
+        android:ellipsize="end"
+        android:textSize="12sp" />
+    <View 
+        android:background="#d3d3d3" 
+        android:layout_width ="fill_parent" 
+        android:layout_height="1dip" 
+        android:layout_toRightOf="@id/fb_icon"
+        android:layout_above="@id/fb_event_info"/>
+
+</RelativeLayout> 

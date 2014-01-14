@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">NetworkMe</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="search_hint">Search Anything!</string>
+    <string name="app_id">388123911290045</string>
+    <string name="query">Query</string>
+
+
+    <string name="title_activity_text_feed">TextFeedActivity</string>
+    <string name="home">Home</string>
+    <string name="map">Map</string>
+    <string name="text">Text</string>
+    <string name="image">Image</string>
+    <string name="video">Video</string>
+    <string name="mashItUp">Mash It</string>
+    <string name ="attending">Attending</string>
+    <string name="settings">Settings</string>
+    <string name="completeString">Complete!</string>
+
+</resources>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/SearchKeyword"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="Search Keyword"
+        android:inputType="text"
+        android:layout_alignParentTop="true"/>
+
+    <EditText
+        android:id="@+id/Location"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="Search Location"
+        android:inputType="text"
+        android:layout_below="@+id/SearchKeyword"/>
+    <Button
+        android:id="@+id/searchButton"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_below="@+id/Location"
+        android:layout_alignParentRight="true"
+        android:text="Search"/>
+
+</RelativeLayout>

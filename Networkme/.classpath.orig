@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="com"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
+	<classpathentry exported="true" kind="lib" path="libs/instagram-java-1.3.5.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/twitter4j-core-3.0.5.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/twitter4j-media-support-3.0.4.jar"/>
+<<<<<<< HEAD
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="gen"/>
+	<classpathentry exported="true" kind="lib" path="libs/android-support-v4.jar"/>
+	<classpathentry kind="lib" path="libs/android-smart-image-view-1.0.0.jar"/>
+	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK/google-play-services_lib"/>
+=======
+	<classpathentry exported="true" kind="lib" path="libs/twitter4j-stream-3.0.4.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/android-support-v4.jar"/>
+	<classpathentry kind="lib" path="libs/android-smart-image-view-1.0.0.jar"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="gen"/>
+>>>>>>> c0d030034514c08250095fb603fc08152e3c6c0a
+	<classpathentry kind="output" path="bin/classes"/>
+</classpath>

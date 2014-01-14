@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#CF000000">
+
+    <ProgressBar
+        android:id="@+id/progress_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textColor="#FFD700"
+        android:text="Searching Social Media"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal" >
+
+        <FrameLayout
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" >
+
+            <ProgressBar
+                android:id="@+id/facebook_prog_bar"
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:indeterminateOnly="true" />
+
+            <TextView
+                android:id="@+id/fb_complete_text"
+                android:layout_width="125dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:text="@string/completeString"
+                android:textColor="#61B329"
+                android:visibility="gone"/>
+        </FrameLayout>
+
+        <example.networkme.views.SquareImageView
+            android:id="@+id/facebook_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:src="@drawable/fb_blue_50_greyed" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal" >
+
+        <FrameLayout
+            android:layout_width="125dp"
+            android:layout_height="wrap_content" 
+            android:layout_gravity="center">
+
+            <ProgressBar
+                android:id="@+id/instagram_prog_bar"
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:indeterminateOnly="true" />
+
+            <TextView
+                android:id="@+id/instagram_complete_text"
+                android:layout_width="125dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:textColor="#61B329"
+                android:text="@string/completeString"
+                android:visibility="gone" />
+        </FrameLayout>
+
+        <example.networkme.views.SquareImageView
+            android:id="@+id/instagram_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:src="@drawable/instagram_icon_50_greyed" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal" >
+
+        <FrameLayout
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" >
+
+            <ProgressBar
+                android:id="@+id/twitter_prog_bar"
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:indeterminateOnly="true" />
+
+            <TextView
+                android:id="@+id/twitter_complete_text"
+                android:layout_width="125dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:textColor="#61B329"
+                android:text="@string/completeString"
+                android:visibility="gone" />
+        </FrameLayout>
+
+        <example.networkme.views.SquareImageView
+            android:id="@+id/twitter_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="17dp"
+            android:src="@drawable/bird_blue_48_greyed" />
+    </LinearLayout>
+
+</LinearLayout>
