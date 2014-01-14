@@ -14,3 +14,5 @@ results. You can also expand the results for more detailed information on the da
 
 This is just a repo fo displaying our work in progress, it will not be updated as
 the main code base is centred on BitBucket.
+
+Investigate the "example" folder for code.
