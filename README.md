@@ -15,6 +15,6 @@ You can also search key words, use the tabs to navigate between styles of viewin
 results. You can also expand the results for more detailed information on the data being displayed.
 
 This is just a repo fo displaying our work in progress, it will not be updated as
-the main code base is centred on BitBucket.
+the main code base is centred on BitBucket (https://bitbucket.org/redstar2530/networkme/  just incase we go public)
 
 Investigate the "example" folder for code.
