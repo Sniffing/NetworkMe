@@ -7,6 +7,8 @@ The idea was put forward by start-up company Ocean Labs and has been developed
 as part of a Group project.
 
 To use the application, log in with facebook and click search (GPS enabled).
+You can also log into instagram through "Settings" and clicking the button there.
+The response is not updated real time at the moment but you will be loffed in.
 
 You can search for any city in the world, the geocoder fails if you search a country.
 You can also search key words, use the tabs to navigate between styles of viewing

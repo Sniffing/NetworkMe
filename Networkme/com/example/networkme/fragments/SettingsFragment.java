@@ -5,6 +5,7 @@ import java.util.List;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -36,7 +37,7 @@ public class SettingsFragment extends Fragment implements OnClickListener {
 	Button instagramLogin;
 	Button twitterLogin;
 	ListView listview;
-	List<Integer> APIlist = new ArrayList<Integer>();
+	List<Integer> APIlist;
 	private static SquareImageView fbstatus;
 	private static SquareImageView twitterstatus;
 	private static SquareImageView instagramstatus;
@@ -45,12 +46,15 @@ public class SettingsFragment extends Fragment implements OnClickListener {
     public View onCreateView(LayoutInflater inflater,
                             ViewGroup container,
                             Bundle savedInstanceState) {
-    	APIlist.add(MainActivity.TWITTER_API_ID);
+    	APIlist = new ArrayList<Integer>();
     	APIlist.add(MainActivity.FACEBOOK_API_ID);
+    	APIlist.add(MainActivity.TWITTER_API_ID);
     	APIlist.add(MainActivity.INSTAGRAM_API_ID);
     	
         View view = inflater.inflate(R.layout.fragment_list, container, false);
         listview = (ListView)view.findViewById(R.id.display_list);
+        view.setBackgroundColor(Color.parseColor("#404040"));
+        listview.setBackgroundColor(Color.parseColor("#404040"));
         
         ListAdapter adapter = new SettingsAdapter(this.getActivity(),APIlist);
         listview.setAdapter(adapter);
@@ -60,41 +64,10 @@ public class SettingsFragment extends Fragment implements OnClickListener {
         authButton.setFragment(this);
         authButton.setReadPermissions(Arrays.asList("user_likes", "user_status", "user_events",
                 "friends_events"));
-        
-		fbstatus = (SquareImageView)view.findViewById(R.id.status_fb);
-		
-		instagramLogin = (Button)view.findViewById(R.id.button_instagram_login);
-		instagramstatus = (SquareImageView)view.findViewById(R.id.status_instagram);
-		instagramLogin.setOnClickListener(this);
-		
-		twitterLogin = (Button)view.findViewById(R.id.button_twitter_login);
-		twitterstatus = (SquareImageView)view.findViewById(R.id.status_twitter);
-		
-		twitterLogin.setOnClickListener(this);
-		setInitialSettingStatus();		
-		*/
+        */
         return view;
     }
-	private void setInitialSettingStatus() {
-		if (MainActivity.TWITTER_LOGGED_IN) 
-			twitterstatus.setImageResource(R.drawable.tick);
-		else
-			twitterstatus.setImageResource(R.drawable.cross);
-		
-		if (MainActivity.FACEBOOK_LOGGED_IN) 
-			fbstatus.setImageResource(R.drawable.tick);
-		else
-			fbstatus.setImageResource(R.drawable.cross);
-		
-		if (MainActivity.INSTAGRAM_LOGGED_IN) 
-			instagramstatus.setImageResource(R.drawable.tick);
-		else
-			instagramstatus.setImageResource(R.drawable.cross);
-	}
 	
-	public static void setInstagramLoggedIn(){
-		//instagramstatus.setImageResource(R.drawable.tick);
-	}
     private void onSessionStateChange(Session session, SessionState state, Exception exception) {
         if (state.isOpened()) {
             if(this.getActivity() instanceof LoginActivity){
@@ -112,7 +85,7 @@ public class SettingsFragment extends Fragment implements OnClickListener {
             Log.d("Status:" , "Logged out...");
             MainActivity.FACEBOOK_LOGGED_IN = false;
             //fbstatus.setImageResource(R.drawable.cross);
-        }
+        } 
     }
     private Session.StatusCallback callback = new Session.StatusCallback() {
         @Override

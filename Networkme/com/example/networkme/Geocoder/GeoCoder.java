@@ -3,27 +3,20 @@ package example.networkme.Geocoder;
 import java.io.IOException;
 import java.util.List;
 
-import twitter4j.GeoLocation;
-import twitter4j.Query;
 import android.content.Context;
 import android.location.Address;
 import android.location.Geocoder;
-import android.location.Location;
-import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.AsyncTask;
-import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
-import example.networkme.Handler.FacebookHandler;
-import example.networkme.Handler.InstagramHandler;
-import example.networkme.Handler.TwitterHandler;
 import example.networkme.activities.MainActivity;
 
 /**
  * Created by tt1611 on 14/11/13.
  */
 public class GeoCoder {
+	private static GeoCoder singleton = null;
 
 	private final String TAG = "GeoCoder";
 	private Context context;
@@ -34,12 +27,19 @@ public class GeoCoder {
 	private double currLon;
 	private String keywords;
 
-	// Constructor, we should base class our API handlers or overload constructor
-	// e.g GeoCode(MainActivity fragment, InstagramAPIHandler hander)
-	// GeoCode(MainActivity fragment, FacebookAPIHandler handler)
-	// Better to use base class see other functions in this class
-	public GeoCoder(MainActivity activity) {
+	public static GeoCoder getInstance(MainActivity activity) {
+		if (singleton == null){
+			singleton = new GeoCoder(activity);
+			return singleton;
+		} else {
+			return singleton;
+		}
+	}
+	
+	private GeoCoder(MainActivity activity) {
 		this.activity = activity;
+		currLat = MainActivity.INVALID_LAT_LONG_VALUE;
+		currLon = MainActivity.INVALID_LAT_LONG_VALUE;
 		context = activity.getApplicationContext();
 	}
 
@@ -81,12 +81,14 @@ public class GeoCoder {
 					}
 				} else {
 					Log.d(TAG,"Location entered is too general (e.g. country typed in)");
-					// The current long and lat will remain the same
+					currLat = MainActivity.INVALID_LAT_LONG_VALUE;
+					currLon = MainActivity.INVALID_LAT_LONG_VALUE;
 				}
 
 			} catch (IOException e) {
+				//Defaults to imperial college if failure
 				currLat = 51.5081;
-				currLon = 0.0878;
+				currLon = -0.1769;
 				Log.d(TAG, "ERROR!");
 				e.printStackTrace();
 			}
@@ -100,7 +102,8 @@ public class GeoCoder {
 		@Override
 		protected void onPostExecute(Void _) {
 			super.onPostExecute(_);
-			if ((Double.compare(currLat,0)==0) && (Double.compare(currLon,0) == 0))
+			if ((Double.compare(currLat,MainActivity.INVALID_LAT_LONG_VALUE)==0) && 
+					(Double.compare(currLon,MainActivity.INVALID_LAT_LONG_VALUE) == 0))
 				Toast.makeText(activity, "Geocoder could not find the location at the moment", Toast.LENGTH_SHORT);
 			else
 				activity.apiCall(currLat, currLon, keywords);

@@ -8,6 +8,7 @@ import android.webkit.WebView;
 import com.example.networkme.R;
 
 import example.networkme.Handler.InstagramHandler;
+import example.networkme.adapter.SettingsAdapter;
 import example.networkme.fragments.LoginFragment;
 import example.networkme.fragments.SettingsFragment;
 
@@ -33,7 +34,6 @@ public class InstagramLoginActivity extends Activity implements MyWebViewClient.
         InstagramHandler.getSingleton(this).setToken(tokenString);
         Log.d("INSTAGRAM", "TOKEN STRING:" + tokenString);
         MainActivity.INSTAGRAM_LOGGED_IN = true;
-        SettingsFragment.setInstagramLoggedIn();
         finish();
     }
 

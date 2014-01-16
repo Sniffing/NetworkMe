@@ -3,7 +3,7 @@ package example.networkme.activities;
 /* I added crashlytics after talking to Ocean Labs
  * about it, we should add MixPanel too if we have the time
  */
-import com.crashlytics.android.Crashlytics;
+//import com.crashlytics.android.Crashlytics;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
@@ -32,7 +32,7 @@ public class LoginActivity extends FragmentActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Crashlytics.start(this);
+        //Crashlytics.start(this);
 		try {
             PackageInfo info;
             info = getPackageManager().getPackageInfo(

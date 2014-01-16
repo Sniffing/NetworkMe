@@ -1,7 +1,6 @@
 package example.networkme.activities;
 
 import java.util.ArrayList;
-import java.util.Hashtable;
 import java.util.List;
 
 import android.app.ActionBar;
@@ -9,6 +8,7 @@ import android.app.ActionBar.Tab;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Context;
+import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -35,7 +35,6 @@ import example.networkme.Handler.TwitterObject;
 import example.networkme.adapter.TabsPagerAdapter;
 import example.networkme.fragments.SearchInProgressFragmentDialog;
 import example.networkme.fragments.SearchSettingsBarFragment;
-import example.networkme.fragments.TimeoutFragmentDialog;
 
 public class MainActivity extends FragmentActivity implements
 		ActionBar.TabListener {
@@ -152,7 +151,7 @@ public class MainActivity extends FragmentActivity implements
 		SearchSettingsBarFragment isf = new SearchSettingsBarFragment();
 		FragmentTransaction ft = fm.beginTransaction();
 		ft.add(R.id.searchFrame, isf);
-		ft.commit();
+		ft.commitAllowingStateLoss();
 
 	}
 
@@ -239,7 +238,7 @@ public class MainActivity extends FragmentActivity implements
 	
 	/*Main call, will call to the APIs though if not local, this will be
 	  called from the method below, geoCoderCall.
-	 */
+	 */	
 	public void apiCall(double lat, double lon, String keywords) {
 		Handler timeout_handler = new Handler();
 		twitterHandler.doSearchTask(lat, lon, keywords);
@@ -282,7 +281,7 @@ public class MainActivity extends FragmentActivity implements
 	
 	public void geoCoderCall(String loc, String keywords) {
 		Tuple<String, String> locArgPair = new Tuple<String, String>(loc,keywords);
-		GeoCoder geocoder = new GeoCoder(this);
+		GeoCoder geocoder = GeoCoder.getInstance(this);
 		Log.d(TAG,"In Geocoder call, looking for:" + loc);
 		geocoder.runQuery(locArgPair);
 	}

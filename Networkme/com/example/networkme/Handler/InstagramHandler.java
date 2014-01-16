@@ -30,6 +30,9 @@ public class InstagramHandler {
 
 	private final String TAG = "INSTAGRAM_HANDLER";
 	private static InstagramHandler singleton;
+	
+	private final String CLIENT_SECRET = "8fb3843010dc4066a4169e7f0c90c3a4";
+	private final String CLIENT_ID = "11e87e3a24894b5e84711a015816e9e9";
 
 	private String authUrl;
 	private InstagramSession session;
@@ -48,8 +51,8 @@ public class InstagramHandler {
 			String authUrl = auth
 					.setRedirectUri(
 							"hyperlocalscheme://oauth/callback/instagram/")
-					.setClientSecret("8fb3843010dc4066a4169e7f0c90c3a4")
-					.setClientId("11e87e3a24894b5e8private boolean searchInProgress;4711a015816e9e9")
+					.setClientSecret(CLIENT_SECRET)
+					.setClientId(CLIENT_ID)
 					.getAuthorizationUri();
 			String authUrl2 = authUrl.replace("code", "token");
 			this.authUrl = authUrl2;

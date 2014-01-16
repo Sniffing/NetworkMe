@@ -10,7 +10,7 @@
         android:layout_height="90dip">
       
     <example.networkme.views.SquareImageView
-        android:id="@+id/login_media_icon"
+        android:id="@+id/login_media_icon_fb"
         android:layout_width="70dip"
         android:layout_height="70dip"
         android:padding="10dip"
@@ -29,7 +29,7 @@
             android:layout_height="50dip" >
 
             <TextView
-                android:id="@+id/log_in_platform"
+                android:id="@+id/log_in_platform_fb"
                 android:layout_width="fill_parent"
                 android:layout_height="50dip"
                 android:background="#2A2A2A"
@@ -39,9 +39,9 @@
                 android:textColor="#ffffff"
                 android:textSize="22sp" />
 
-            <Button
-                android:id="@+id/log_in_out_button"
-                android:layout_width="80dip"
+            <com.facebook.widget.LoginButton
+                android:id="@+id/log_in_out_button_fb"
+                android:layout_width="wrap_content"
                 android:layout_height="50dip"
                 android:layout_gravity="right"
 				android:background="#a3a3a3"
@@ -55,7 +55,7 @@
             android:layout_width="fill_parent">
 
             <TextView
-                android:id="@+id/platform_status"
+                android:id="@+id/platform_status_fb"
                 android:layout_width="fill_parent"
                 android:layout_height="40dip"
                 android:background="#151515"
@@ -66,7 +66,7 @@
                 android:textSize="18sp" />
 
             <example.networkme.views.SquareImageView
-                android:id="@+id/status_indicator"
+                android:id="@+id/status_indicator_fb"
                 android:layout_width="wrap_content"
                 android:layout_height="38dip"
                 android:paddingRight="10dip"
