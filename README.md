@@ -23,8 +23,11 @@ Due to the short time scale of this project, this ws the resulting MVP. Some kno
 > Fundamental Media Object design. There is duplication of the twitter class code which accounts for both picture
   and non-picture objects. Simple fixes here include creating a new class of say PictureElement which would then have to
   be added as member to both twitter and instagram instances.
+  
 > Google Map interaction. The use of google maps was not throoughly tested during it implementation, as a result, it may    contain flaws in the code. One obvious flaw is that the map occasionally will crash the application.
+
 > The code has been less than generously documented, for any inquiries, please email terence.tse11@imperial.ac.uk
+
 > There are problems when loading iages. Though we use a third party library (smart image), it does still cause
   jumping in the image view.
 
