@@ -31,4 +31,9 @@ Due to the short time scale of this project, this ws the resulting MVP. Some kno
 > There are problems when loading iages. Though we use a third party library (smart image), it does still cause
   jumping in the image view.
 
+> There were also a various amount of API keys that have been used throughout the project, they are most likely static      variables and can easily be identified to change.
+
+> There has been use of a singleton and after some though, this may not be the best way to design the various API      
+  Handlers in the project, this may want to be reconsidered.
+
 The scope for this project can be infinitely large and has many challenges, mainly concerning the APIs and their limitations.
