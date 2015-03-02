@@ -14,7 +14,7 @@ You can search for any city in the world, the geocoder fails if you search a cou
 You can also search key words, use the tabs to navigate between styles of viewing
 results. You can also expand the results for more detailed information on the data being displayed.
 
-Investigate the "example" folder for code.
+Investigate the "com/example" folder for code.
 
 
 Things to improve
